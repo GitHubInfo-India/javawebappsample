@@ -22,7 +22,7 @@ node {
       def resourceGroup = 'GitHub-DevOps'
       def webAppName = 'javasamplewebapp'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'b0e4e8df-3fd8-4bd2-b28b-ae9291f314f6', passwordVariable: 'fT6kWVYF.Ftcf9HH77w09tsY~L1HVynGNf', usernameVariable: '53aab92e-8a00-4f0b-b1d7-2c347111c463')]) {
+      withCredentials([usernamePassword(credentialsId: 'Service-Principle', passwordVariable: 'fT6kWVYF.Ftcf9HH77w09tsY~L1HVynGNf', usernameVariable: '53aab92e-8a00-4f0b-b1d7-2c347111c463')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
